@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// import soketIO from 'socket.io-client';
+import {Route,Routes} from 'react-router-dom';
+import Join from './components/Join';
+import Chat from './components/Chat/Chat';
+
+// const ENDPOINT = "http://localhost:4500/";
+// const soket =  soketIO(ENDPOINT,{transports:["websoket"]});
 
 function App() {
+  // soket.on("connect",()=>{
+  //     // console.log("connect in frontend");
+  // })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path ="/" element = {<Join/>}></Route>
+        <Route path = "/chat" element = {<Chat/>}></Route>
+      </Routes>
     </div>
   );
 }
